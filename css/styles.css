@@ -1,0 +1,40 @@
+/* Inputning valid va invalid tanlovchisi input maydoniga kiritilayotgan ma'lumot uning tipiga to'g'ri kelmaganda qandaydur belgi berish uchun ishlatiladi.
+Masalan:  inputning chegaqasi ma'umot to'g'ri kelmasa qizil rangda bo'ladi, ma'lumot to'g'ri kiritilsa yashil ranga o'tadi*/
+
+.container {
+  width: 1000px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-form {
+  margin: 50px;
+  border: 1px solid #000;
+}
+
+/* Kiritilayotgan ma'lumot inputning turiga to'g'ri kelganda belgi berilishi uchun inputga uning turiga mos patternni kiritishimiz kerak. Masalae email uchun patern {^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$
+
+} bu patternni htmldagi inputga kiritamiz */
+
+.input-form:focus {
+  outline: 1px dotted blue;
+  outline-offset: 3px;
+}
+
+/* Kiritilgan ma'lumot input tipiga mos kelmasa border rangi qizilga aylanadi*/
+.input-form:not(:placeholder-shown) {
+  border-color: red;
+}
+
+/* Kiritilgan ma'lumot tnput turiga va patternga mos kelganda border rangi rashil bo'ladi. Bu kud invaliddan oldin yozilishi kerak*/
+.input-form:valid {
+  border-color: chartreuse;
+}
+
+/* Kiritilgan ma'lumot input tipiga to'g'ri kelmaganda border rangi qizil bo'lishini quyidagicha ham yozish mumkun faqat bu holatda border rangi ma'lumot kiritilmaganda ham qizil bo'lib turadi*/
+/* .input-form:valid {
+  border-color: red;
+} */
